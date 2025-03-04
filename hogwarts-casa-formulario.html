@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Selección de Casa - Harry Potter</title>
+    <link rel="stylesheet" href="hogwarts-casa-formulario.css">
+</head>
+<body>
+    <header>
+        <h1>¿Cuánto sabes sobre Hogwarts?</h1>
+        <p>Responde las preguntas para descubrir tu destino en Hogwarts.</p>
+    </header>
+    
+    <main>
+        <form id="examForm">
+
+            <!-- Pregunta 1: Texto -->
+            <div class="form-group">
+                <label for="q1">1. ¿Qué polvos usan los magos para cuando viajan por chimeneas? (Obligatoria)</label>
+                <input type="text" id="q1" name="q1" placeholder="Escribe tu respuesta aquí" required>
+            </div>
+
+            <!-- Pregunta 2: Radio buttons -->
+            <div class="form-group">
+                <label>2. ¿Qué actividad le gusta hacer a Harry Potter en Hogwarts?</label>
+                <div class="options">
+                    <input type="radio" id="quidditch" name="q2" value="quidditch" required>
+                    <label for="quidditch">Jugar al Quidditch</label><br>
+                    <input type="radio" id="biblioteca" name="q2" value="biblioteca">
+                    <label for="biblioteca">Estudiar en la biblioteca</label><br>
+                    <input type="radio" id="cocina" name="q2" value="cocina">
+                    <label for="cocina">Ayudar en la cocina</label><br>
+                    <input type="radio" id="hechizos-avanzados" name="q2" value="hechizos-avanzados">
+                    <label for="hechizos-avanzados">Practicar hechizos avanzados</label>
+                </div>
+            </div>
+
+            <!-- Pregunta 3: Checkbox -->
+            <div class="form-group">
+                <label>3. ¿Qué cualidades valoran más los de Hufflepuff?</label>
+                <div class="options">
+                    <input type="checkbox" id="valentia" name="q3[]" value="valentia">
+                    <label for="valentia">Valentía</label><br>
+                    <input type="checkbox" id="inteligencia" name="q3[]" value="inteligencia">
+                    <label for="inteligencia">Inteligencia</label><br>
+                    <input type="checkbox" id="lealtad" name="q3[]" value="lealtad">
+                    <label for="lealtad">Lealtad</label><br>
+                    <input type="checkbox" id="ambicion" name="q3[]" value="ambicion">
+                    <label for="ambicion">Ambición</label>
+                </div>
+            </div>
+
+            <!-- Pregunta 4: Select -->
+            <div class="form-group">
+                <label for="q4">4. ¿Cuál es la clase que da el profesor Snape?</label>
+                <select id="q4" name="4" required>
+                    <option value="Defensa Contra las Artes Oscuras">Defensa Contra las Artes Oscuras</option>
+                    <option value="Transformaciones">Transformaciones</option>
+                    <option value="Pociones">Pociones</option>
+                    <option value="Historia de la Magia">Historia de la Magia</option>
+                </select>
+            </div>
+
+            <!-- Pregunta 5: Texto -->
+            <div class="form-group">
+                <label for="q5">5. ¿Quién es el creador de la piedra filosofal? (Nombre y apellido)</label>
+                <input type="text" id="q5" name="q5" placeholder="Escribe tu respuesta aquí">
+            </div>
+
+            <!-- Pregunta 6: Radio buttons -->
+            <div class="form-group">
+                <label>6. ¿En qué lugar de Hogwarts se encuentran los dormitorios de Slytherin?</label>
+                <div class="options">
+                    <input type="radio" id="sala-comun" name="q6" value="Gryffindor"> 
+                    <label for="sala-comun">El séptimo piso</label><br>
+                    <input type="radio" id="torre" name="q6" value="Ravenclaw">
+                    <label for="torre">La Torre de Astronomía</label><br>
+                    <input type="radio" id="invernaderos" name="q6" value="Hufflepuff">
+                    <label for="invernaderos">Los invernaderos</label><br>
+                    <input type="radio" id="mazmorras" name="q6" value="Slytherin">
+                    <label for="mazmorras">Las mazmorras</label>
+                </div>
+            </div>
+
+            <!-- Pregunta 7: Checkbox -->
+            <div class="form-group">
+                <label>7. ¿Cómo se llama la lechuza de Harry Potter?</label>
+                <div class="options">
+                    <input type="checkbox" id="hedwig" name="q7[]" value="Hedwig">
+                    <label for="hedwig">Hedwig</label><br>
+                    <input type="checkbox" id="crookshanks" name="q7[]" value="Crookshanks">
+                    <label for="crookshanks">Crookshanks</label><br>
+                    <input type="checkbox" id="trevor" name="q7[]" value="Trevor">
+                    <label for="trevor">Trevor</label><br>
+                    <input type="checkbox" id="scabbers" name="q7[]" value="Scabbers">
+                    <label for="scabbers">Scabbers</label>
+                </div>
+            </div>
+
+            <!-- Pregunta 8: Select -->
+            <div class="form-group">
+                <label for="q8">8. ¿Qué color representa a la casa de Ravenclaw?</label>
+                <select id="q8" name="q8" required>
+                    <option value="rojo">Rojo</option>
+                    <option value="azul">Azul</option>
+                    <option value="amarillo">Amarillo</option>
+                    <option value="verde">Verde</option>
+                </select>
+            </div>
+
+            <!-- Pregunta 9: Texto -->
+            <div class="form-group">
+                <label for="q9">9. ¿Qué criaturas invisibles tiran de las carrozas en Hogwarts?</label>
+                <input type="text" id="q9" name="q9" placeholder="Escribe tu respuesta">
+            </div>
+
+            <!-- Pregunta 10: Radio buttons -->
+            <div class="form-group">
+                <label>10. ¿De qué está hecha la varita de Harry Potter?</label>
+                <div class="options">
+                    <input type="radio" id="varita-dragon" name="q10" value="Fibra de corazón de Dragón">
+                    <label for="varita-dragon">Fibra de corazón de Dragón</label><br>
+                    <input type="radio" id="varita-fenix" name="q10" value="Pluma de Fénix">
+                    <label for="varita-fenix">Pluma de Fénix</label><br>
+                    <input type="radio" id="varita-basilisco" name="q10" value="Cuerno de basilisco">
+                    <label for="varita-basilisco">Cuerno de basilisco</label><br>
+                    <input type="radio" id="varita-unicornio" name="q10" value="Pelo de cola de unicornio">
+                    <label for="varita-unicornio">Pelo de cola de unicornio</label>
+                </div>
+            </div>
+
+            <button type="submit">Resolver</button>
+        </form>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
