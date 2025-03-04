@@ -1,7 +1,8 @@
+document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('examForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Evitar el envío del formulario
 
-    let score = 0;
+    score = 0;
     const totalQuestions = 10;
 
     const correctAnswers = {
@@ -14,8 +15,31 @@ document.getElementById('examForm').addEventListener('submit', function(event) {
         q7: ["Hedwig"],
         q8: "azul",
         q9: "Thestrals",
-        q10: "Fibra de corazón de Dragón"
+        q10: "Pluma de Fénix"
     };
+
+    checkTextAnswer('q1', correctAnswers.q1);
+    checkRadioAnswer('q2', correctAnswers.q2);
+    checkCheckboxAnswer('q3', correctAnswers.q3);
+    checkSelectAnswer('q4', correctAnswers.q4);
+    checkTextAnswer('q5', correctAnswers.q5);
+    checkRadioAnswer('q6', correctAnswers.q6);
+    checkCheckboxAnswer('q7', correctAnswers.q7);
+    checkSelectAnswer('q8', correctAnswers.q8);
+    checkTextAnswer('q9', correctAnswers.q9);
+    checkRadioAnswer('q10', correctAnswers.q10);
+
+    // Limitar la puntuación mínima a 0
+    score = Math.max(0, score);
+
+    // Cambiar el contenido del formulario por el resultado
+    const form = document.getElementById('examForm');
+    form.innerHTML = `
+        <h2>Resultado del examen</h2>
+        <p>Tu puntuación es: ${score.toFixed(2)} / ${totalQuestions}</p>
+        <button onclick="location.reload()">Volver a intentar</button>
+    `;
+});
 
     function checkTextAnswer(questionId, correctAnswer) {
         const userAnswer = document.getElementById(questionId).value.trim().toLowerCase();
@@ -62,21 +86,4 @@ document.getElementById('examForm').addEventListener('submit', function(event) {
             score -= 0.33; 
         }
     }
-
-    checkTextAnswer('q1', correctAnswers.q1);
-    checkRadioAnswer('q2', correctAnswers.q2);
-    checkCheckboxAnswer('q3', correctAnswers.q3);
-    checkSelectAnswer('q4', correctAnswers.q4);
-    checkTextAnswer('q5', correctAnswers.q5);
-    checkRadioAnswer('q6', correctAnswers.q6);
-    checkCheckboxAnswer('q7', correctAnswers.q7);
-    checkSelectAnswer('q8', correctAnswers.q8);
-    checkTextAnswer('q9', correctAnswers.q9);
-    checkRadioAnswer('q10', correctAnswers.q10);
-
-    // Limitar la puntuación mínima a 0
-    score = Math.max(0, score);
-
-    // Mostrar el resultado
-    document.getElementById('result').innerText = `Tu puntuación es: ${score.toFixed(2)} / ${totalQuestions}`;
 });
