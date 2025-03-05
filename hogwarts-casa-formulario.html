@@ -13,19 +13,19 @@
     </header>
     
     <main>
-        <form id="examForm">
+        <form id="examForm" method="post">
 
             <!-- Pregunta 1: Texto -->
             <div class="form-group">
                 <label for="q1">1. ¿Qué polvos usan los magos para cuando viajan por chimeneas? (Obligatoria)</label>
-                <input type="text" id="q1" name="q1" placeholder="Escribe tu respuesta aquí" required>
+                <input type="text" id="q1" name="q1" placeholder="Escribe tu respuesta aquí">
             </div>
 
             <!-- Pregunta 2: Radio buttons -->
-            <div class="form-group">
+            <div class="form-group" >
                 <label>2. ¿Qué actividad le gusta hacer a Harry Potter en Hogwarts?</label>
                 <div class="options">
-                    <input type="radio" id="quidditch" name="q2" value="quidditch" required>
+                    <input type="radio" id="quidditch" name="q2" value="quidditch">
                     <label for="quidditch">Jugar al Quidditch</label><br>
                     <input type="radio" id="biblioteca" name="q2" value="biblioteca">
                     <label for="biblioteca">Estudiar en la biblioteca</label><br>
@@ -54,7 +54,8 @@
             <!-- Pregunta 4: Select -->
             <div class="form-group">
                 <label for="q4">4. ¿Cuál es la clase que da el profesor Snape?</label>
-                <select id="q4" name="4" required>
+                <select id="q4" name="4">
+                    <option value="EnBlanco"></option>
                     <option value="Defensa Contra las Artes Oscuras">Defensa Contra las Artes Oscuras</option>
                     <option value="Transformaciones">Transformaciones</option>
                     <option value="Pociones">Pociones</option>
@@ -102,6 +103,7 @@
             <div class="form-group">
                 <label for="q8">8. ¿Qué color representa a la casa de Ravenclaw?</label>
                 <select id="q8" name="q8" required>
+                    <option value="EnBlanco"></option>
                     <option value="rojo">Rojo</option>
                     <option value="azul">Azul</option>
                     <option value="amarillo">Amarillo</option>

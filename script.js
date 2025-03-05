@@ -44,7 +44,7 @@ document.getElementById('examForm').addEventListener('submit', function(event) {
     function checkTextAnswer(questionId, correctAnswer) {
         const userAnswer = document.getElementById(questionId).value.trim().toLowerCase();
         if (userAnswer === "") {
-            return; // No sumar ni restar puntos si está en blanco
+            return; 
         }
         if (userAnswer === correctAnswer.toLowerCase()) {
             score++;
@@ -64,15 +64,32 @@ document.getElementById('examForm').addEventListener('submit', function(event) {
     }
 
     function checkCheckboxAnswer(questionName, correctAnswers) {
-        const userAnswers = Array.from(document.querySelectorAll(`input[name="${questionName}[]"]:checked`)).map(input => input.value);
-        if (userAnswers.length === 0) {
-            return; 
+    // Obtener todos los checkboxes 
+    const checkboxes = document.querySelectorAll(`input[name="${questionName}"]`);
+
+    // Array para almacenar las respuestas del usuario
+    const userAnswers = [];
+
+    // Recorrer cada checkbox
+    checkboxes.forEach(checkbox => {
+        // Si el checkbox está marcado, agregar su valor al array de respuestas del usuario
+        if (checkbox.checked) {
+            userAnswers.push(checkbox.value);
         }
-        if (JSON.stringify(userAnswers.sort()) === JSON.stringify(correctAnswers.sort())) {
-            score++;
-        } else {
-            score -= 0.33; 
-        }
+    });
+
+    // Comparar las respuestas del usuario con las respuestas correctas
+     if (userAnswers.length === 0) {
+        return; // Si no hay respuestas, no hacer nada
+     }
+    const isCorrect = userAnswers.every(answer => correctAnswers.includes(answer)) && correctAnswers.every(answer => userAnswers.includes(answer));
+        if (isCorrect) {
+        score++;
+        } 
+
+        else {
+        score -= 0.33; 
+        }   
     }
 
     function checkSelectAnswer(questionId, correctAnswer) {
