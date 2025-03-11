@@ -103,21 +103,24 @@ button:hover {
     transform: scale(1.05); /* Pequeño efecto de zoom */
 }
 
+.correct {
+    color: green;
+    font-weight: bold;
+}
 
-@media (max-width: 600px) {
-    body, main {
-        padding: 10px;
-    }
+.incorrect {
+    color: red;
+    font-weight: bold;
+}
 
-    h1 {
-        font-size: 24px;
-    }
+.no-answer {
+    color: inherit; /* Sin cambios */
+}
 
-    p {
-        font-size: 14px;
-    }
-
-    button {
-        font-size: 14px;
-    }
+.result-group {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #5c3d99;
+    border-radius: 10px;
+    background-color: #392d61;
 }
