@@ -1,0 +1,85 @@
+El problema parece estar en la función getAnswerClass, que no está correctamente adaptada para manejar las respuestas de los radio buttons. Esta función solo está diseñada para trabajar con campos de texto (input o select), pero no está verificando correctamente las respuestas de los radio buttons.
+
+Problemas detectados:
+getAnswerClass no funciona con radio buttons:
+
+La función getAnswerClass está diseñada para obtener el valor de un campo de texto (input o select), pero no para radio buttons.
+
+Para los radio buttons, necesitas obtener el valor seleccionado y compararlo con la respuesta correcta.
+
+No se está aplicando la clase correcta a las respuestas de los radio buttons:
+
+En el código actual, las respuestas de los radio buttons no se están clasificando como "correct" o "incorrect" porque la función getAnswerClass no está manejando estos casos.
+
+Solución:
+Debes modificar la función getAnswerClass para que también maneje las respuestas de los radio buttons. Aquí te dejo el código corregido:
+
+Código actualizado:
+javascript
+Copy
+function getAnswerClass(questionId, correctAnswer) {
+    // Verificar si es un campo de texto o select
+    const inputElement = document.getElementById(questionId);
+    if (inputElement) {
+        const userAnswer = inputElement.value.trim().toLowerCase();
+        if (!userAnswer) return "no-answer"; // No contestada
+        return userAnswer === correctAnswer.toString().toLowerCase() ? "correct" : "incorrect";
+    }
+
+    // Verificar si es un radio button
+    const radioButtons = document.querySelectorAll(`input[name="${questionId}"]`);
+    if (radioButtons.length > 0) {
+        const selectedRadio = document.querySelector(`input[name="${questionId}"]:checked`);
+        if (!selectedRadio) return "no-answer"; // No contestada
+        return selectedRadio.value === correctAnswer.toString() ? "correct" : "incorrect";
+    }
+
+    return "no-answer"; // Por defecto, si no se encuentra el elemento
+}
+Explicación de los cambios:
+Verificación de campos de texto y select:
+
+Si el elemento con el questionId existe y es un campo de texto o un select, se obtiene su valor y se compara con la respuesta correcta.
+
+Verificación de radio buttons:
+
+Si no se encuentra un campo de texto o select, se verifica si hay radio buttons con el atributo name igual al questionId.
+
+Si no se seleccionó ningún radio button, se devuelve "no-answer".
+
+Si se seleccionó un radio button, se compara su valor con la respuesta correcta.
+
+Respuesta por defecto:
+
+Si no se encuentra ningún elemento, se devuelve "no-answer".
+
+Resultado esperado:
+Con estos cambios, las respuestas de los radio buttons se clasificarán correctamente como "correct" o "incorrect", y se aplicarán las clases CSS correspondientes para cambiar el color.
+
+Ejemplo de uso:
+Si tienes un radio button como este:
+
+html
+Copy
+<input type="radio" name="q2" value="quidditch"> Quidditch
+<input type="radio" name="q2" value="ajedrez"> Ajedrez
+Run HTML
+Y el usuario selecciona "Quidditch", la función getAnswerClass comparará el valor seleccionado con la respuesta correcta (correctAnswers.q2) y devolverá "correct" o "incorrect".
+
+Nota adicional:
+Asegúrate de que las clases CSS correct, incorrect y no-answer estén definidas en tu archivo de estilos para que los colores se apliquen correctamente. Por ejemplo:
+
+css
+Copy
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+.no-answer {
+    color: gray;
+}
+Con estos cambios, tu código debería funcionar correctamente. ¡Buena suerte!

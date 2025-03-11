@@ -11,42 +11,43 @@
         <h1>¿Cuánto sabes sobre Hogwarts?</h1>
         <p>Responde las preguntas para descubrir tu destino en Hogwarts.</p>
     </header>
-    
+
     <main>
+        <div id="countdown"> 01:00</div>
         <form id="examForm" method="post">
 
             <!-- Pregunta 1: Texto -->
             <div class="form-group">
                 <label for="q1">1. ¿Qué polvos usan los magos para cuando viajan por chimeneas? (Obligatoria)</label>
-                <input type="text" id="q1" name="q1" placeholder="Escribe tu respuesta aquí">
+                <input type="text" id="q1" name="q1" placeholder="Escribe tu respuesta aquí" required>
             </div>
 
             <!-- Pregunta 2: Radio buttons -->
             <div class="form-group" >
                 <label>2. ¿Qué actividad le gusta hacer a Harry Potter en Hogwarts?</label>
                 <div class="options">
-                    <input type="radio" id="quidditch" name="q2" value="quidditch">
-                    <label for="quidditch">Jugar al Quidditch</label><br>
-                    <input type="radio" id="biblioteca" name="q2" value="biblioteca">
-                    <label for="biblioteca">Estudiar en la biblioteca</label><br>
-                    <input type="radio" id="cocina" name="q2" value="cocina">
-                    <label for="cocina">Ayudar en la cocina</label><br>
-                    <input type="radio" id="hechizos-avanzados" name="q2" value="hechizos-avanzados">
-                    <label for="hechizos-avanzados">Practicar hechizos avanzados</label>
+                    <input type="radio" id="quidditch" name="q2" value="Jugar al Quidditch">
+                    <label for="Quidditch">Jugar al Quidditch</label><br>
+                    <input type="radio" id="biblioteca" name="q2" value="Estudiar en la biblioteca">
+                    <label for="Biblioteca">Estudiar en la biblioteca</label><br>
+                    <input type="radio" id="cocina" name="q2" value="Ayudar en la cocina">
+                    <label for="Cocina">Ayudar en la cocina</label><br>
+                    <input type="radio" id="hechizos-avanzados" name="q2" value="Practicar hechizos avanzados">
+                    <label for="Hechizos-avanzados">Practicar hechizos avanzados</label>
                 </div>
             </div>
 
-            <!-- Pregunta 3: Checkbox -->
+            <!-- Pregunta 3: radio -->
             <div class="form-group">
                 <label>3. ¿Qué cualidades valoran más los de Hufflepuff?</label>
                 <div class="options">
-                    <input type="checkbox" id="valentia" name="q3[]" value="valentia">
+                    <input type="radio" id="valentia" name="q3" value="Valentia">
                     <label for="valentia">Valentía</label><br>
-                    <input type="checkbox" id="inteligencia" name="q3[]" value="inteligencia">
+                    <input type="radio" id="inteligencia" name="q3" value="Inteligencia">
                     <label for="inteligencia">Inteligencia</label><br>
-                    <input type="checkbox" id="lealtad" name="q3[]" value="lealtad">
+                    <input type="radio" id="lealtad" name="q3" value="Lealtad">
                     <label for="lealtad">Lealtad</label><br>
-                    <input type="checkbox" id="ambicion" name="q3[]" value="ambicion">
+                    <input type="radio" id="ambicion" name="q3" value="Ambicion">
                     <label for="ambicion">Ambición</label>
                 </div>
             </div>
@@ -73,28 +74,28 @@
             <div class="form-group">
                 <label>6. ¿En qué lugar de Hogwarts se encuentran los dormitorios de Slytherin?</label>
                 <div class="options">
-                    <input type="radio" id="sala-comun" name="q6" value="Gryffindor"> 
+                    <input type="radio" id="sala-comun" name="q6" value="El séptimo piso"> 
                     <label for="sala-comun">El séptimo piso</label><br>
-                    <input type="radio" id="torre" name="q6" value="Ravenclaw">
+                    <input type="radio" id="torre" name="q6" value="La Torre de Astronomía">
                     <label for="torre">La Torre de Astronomía</label><br>
-                    <input type="radio" id="invernaderos" name="q6" value="Hufflepuff">
+                    <input type="radio" id="invernaderos" name="q6" value="Los invernaderos">
                     <label for="invernaderos">Los invernaderos</label><br>
-                    <input type="radio" id="mazmorras" name="q6" value="Slytherin">
+                    <input type="radio" id="mazmorras" name="q6" value="Las mazmorras">
                     <label for="mazmorras">Las mazmorras</label>
                 </div>
             </div>
 
-            <!-- Pregunta 7: Checkbox -->
+            <!-- Pregunta 7: radio -->
             <div class="form-group">
                 <label>7. ¿Cómo se llama la lechuza de Harry Potter?</label>
                 <div class="options">
-                    <input type="checkbox" id="hedwig" name="q7[]" value="Hedwig">
+                    <input type="radio" id="hedwig" name="q7" value="Hedwig">
                     <label for="hedwig">Hedwig</label><br>
-                    <input type="checkbox" id="crookshanks" name="q7[]" value="Crookshanks">
+                    <input type="radio" id="crookshanks" name="q7" value="Crookshanks">
                     <label for="crookshanks">Crookshanks</label><br>
-                    <input type="checkbox" id="trevor" name="q7[]" value="Trevor">
+                    <input type="radio" id="trevor" name="q7" value="Trevor">
                     <label for="trevor">Trevor</label><br>
-                    <input type="checkbox" id="scabbers" name="q7[]" value="Scabbers">
+                    <input type="radio" id="scabbers" name="q7" value="Scabbers">
                     <label for="scabbers">Scabbers</label>
                 </div>
             </div>
@@ -104,10 +105,10 @@
                 <label for="q8">8. ¿Qué color representa a la casa de Ravenclaw?</label>
                 <select id="q8" name="q8" required>
                     <option value=""></option>
-                    <option value="rojo">Rojo</option>
-                    <option value="azul">Azul</option>
-                    <option value="amarillo">Amarillo</option>
-                    <option value="verde">Verde</option>
+                    <option value="Rojo">Rojo</option>
+                    <option value="Azul">Azul</option>
+                    <option value="Amarillo">Amarillo</option>
+                    <option value="Verde">Verde</option>
                 </select>
             </div>
 

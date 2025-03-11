@@ -17,6 +17,21 @@ header {
     letter-spacing: 2px;
 }
 
+#countdown {
+    font-size: 25px;
+    color: #ffc107; /* Color dorado */
+    margin: 20px auto;
+    border-radius: 20px; 
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Sombras suaves */
+    border: 3px solid #5c3d99; /* Borde temático */
+    width: 10%;
+    align-content: center;
+    position: fixed; /* Fija el elemento en la pantalla */
+    top: 20px; /* Distancia desde la parte superior */
+    right: 20px; /* Distancia desde la parte derecha */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
 main {
     max-width: 40%;
     margin: 30px auto;
